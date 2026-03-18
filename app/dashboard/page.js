@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import DashboardStats from "@/components/DashboardStats";
 import { Sparkles, Loader2 } from "lucide-react";
 
@@ -85,7 +86,7 @@ export default function DashboardPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Dashboard Overview</h1>
-        <p className="mt-1 text-sm text-gray-500">Welcome to GaneshInventory. Here's a summary of your kitchen.</p>
+        <p className="mt-1 text-sm text-gray-500">Welcome to GaneshInventory. Here&apos;s a summary of your kitchen.</p>
       </div>
       
       <DashboardStats stats={stats} />

@@ -46,7 +46,7 @@ export default function RecipesPage() {
         </div>
       ) : recipes.length === 0 ? (
         <div className="text-center py-20 bg-white rounded-2xl border border-gray-100 shadow-sm">
-          <p className="text-gray-500 mb-4">You haven't created any recipes yet.</p>
+          <p className="text-gray-500 mb-4">You haven&apos;t created any recipes yet.</p>
           <Link href="/recipes/new" className="text-blue-600 font-medium hover:underline">
             Create your first recipe
           </Link>

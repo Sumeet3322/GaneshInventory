@@ -10,9 +10,16 @@ export default function CookPage() {
 
   useEffect(() => {
     fetch("/api/recipes")
-      .then(res => res.json())
-      .then(data => setRecipes(data))
-      .catch(console.error)
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Failed to fetch");
+        return data;
+      })
+      .then(data => setRecipes(Array.isArray(data) ? data : []))
+      .catch(err => {
+        console.error("Failed to load recipes:", err);
+        setRecipes([]);
+      })
       .finally(() => setLoading(false));
   }, []);
 
